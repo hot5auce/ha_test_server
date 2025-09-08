@@ -222,7 +222,7 @@ def root():
 @app.get("/metrics")
 def metrics():
     zone_id = requests.get("http://100.100.100.200/latest/meta-data/zone-id")
-    zone_id = zone_id.content
+    zone_id = zone_id.content.decode("utf-8")
     instance_id = requests.get("http://100.100.100.200/latest/meta-data/instance-id")
-    instance_id = instance_id.content
+    instance_id = instance_id.content.decode("utf-8")
     return {"zone_id": zone_id, "instance_id": instance_id}

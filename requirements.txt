@@ -5,3 +5,4 @@ prometheus-client
 psutil
 httpx
 pydantic
+requests
